@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+    <input type="text" id="input3">
+
+    <button id="btn">Submit</button>
+
+    <p id="box"></p>
+
+    <script> 
+
+        function click() {
+            var value1 = document.getElementById("input1").value;
+            var value2 = document.getElementById("input2").value;
+            var value3 = document.getElementById("input3").value;
+            console.log(value1);
+            var result;
+            if (value2 === "+") {
+                 result = parseInt(value1) + parseInt(value3);
+            }else if (value2 === "-"){
+                result = parseInt(value1) - parseInt(value3);
+            }else if(value2 === "*"){
+                result = parseInt(value1) * parseInt(value3);
+            }else if(value2 === "/"){
+                result = parseInt(value1) / parseInt(value3);
+            }else {
+                document.write("Please write the value in middle box");
+            }
+            document.getElementById("box").innerHTML = result;
+        }
+
+        document.getElementById("btn").addEventListener("click",click);
+    </script>
+</body>
+</html>
